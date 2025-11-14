@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartQ - Queue Management</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <!-- <link rel="stylesheet" href="../static/css/style.css"> -->
 </head>
 <body>
@@ -21,16 +22,18 @@
             </select>
         </div>
 
-        <div id="service-selection" class="card" style="display: none;">
+        <div id="service-selection" class="card" style="display: none; ">
             <h2>Select Service</h2>
             <div id="serviceButtons"></div>
+            <button onclick="goBackorg()" class="btn btn-secondary"><i class="fa-solid fa-arrow-left"></i> Back</button>
         </div>
 
         <div id="phone-input" class="card" style="display: none;">
+            <p style="color: red;">Please enter a valid phone number</p>
             <h2>Enter Your Phone Number</h2>
             <input type="tel" id="phoneNumber" placeholder="+250 7XX XXX XXX" class="input-field">
             <button onclick="joinQueue()" class="btn btn-primary">Get Ticket</button>
-            <button onclick="goBack()" class="btn btn-secondary">Back</button>
+            <button onclick="goBack()" class="btn btn-secondary"><i class="fa-solid fa-arrow-left"></i> Back</button>
         </div>
 
         <div id="ticket-display" class="card" style="display: none;">

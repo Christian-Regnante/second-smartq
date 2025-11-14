@@ -173,6 +173,10 @@ th {
     background: #c0392b;
 }
 
+.btn-warning:hover {
+    background: #c6c91c;
+}
+
 .tabs {
     display: flex;
     gap: 10px;

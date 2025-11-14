@@ -36,7 +36,7 @@ async function loadServices() {
         
         const container = document.getElementById('serviceButtons');
         container.innerHTML = services.map(service => 
-            `<button class="service-btn" onclick="selectService(${service.id})">${service.name}</button>`
+            `<div class="service-btn" onclick="selectService(${service.id})">${service.name}</div>`
         ).join('');
         
         document.getElementById('service-selection').style.display = 'block';
@@ -55,6 +55,15 @@ function goBack() {
     selectedService = null;
     document.getElementById('phone-input').style.display = 'none';
     document.getElementById('service-selection').style.display = 'block';
+}
+
+
+function goBackorg() {
+    selectedOrg = null;
+    selectedService = null;
+    document.getElementById('organizationSelect').value = '';
+    document.getElementById('service-selection').style.display = 'none';
+    document.getElementById('org-selection').style.display = 'block';
 }
 
 async function joinQueue() {
