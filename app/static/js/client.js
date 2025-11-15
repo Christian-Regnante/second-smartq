@@ -70,7 +70,8 @@ async function joinQueue() {
     const phone = document.getElementById('phoneNumber').value;
     
     if (!phone || phone.length < 10) {
-        alert('Please enter a valid phone number');
+        document.getElementById("validNumber").style.display = 'block';
+        // alert('Please enter a valid phone number');
         return;
     }
     
