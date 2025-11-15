@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Login - SmartQ</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <!-- <link rel="stylesheet" href="../static/css/style.css"> -->
 </head>
 <body>
     <div class="container">
         <div class="login-card">
+            <i class="fa-solid fa-arrow-left" onclick="goBackadmin()"></i>
             <h1>Organization Admin Login</h1>
             <form id="loginForm">
                 <input type="text" id="username" placeholder="Username" class="input-field" required>
@@ -45,6 +47,9 @@
                 document.getElementById('error').textContent = 'Login failed';
             }
         });
+        function goBackadmin() {
+            window.location.href ='/'
+        }
     </script>
 </body>
 </html>
