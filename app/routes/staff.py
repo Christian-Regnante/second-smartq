@@ -79,7 +79,7 @@ def call_next():
     current = QueueItem.query.filter_by(service_id=service_id, status='serving').first()
     if current:
         current.status = 'done'
-        current.completed_at = datetime.utcnow()
+        current.completed_at = datetime.now()
     
     # Get next waiting
     next_item = QueueItem.query.filter_by(
@@ -89,7 +89,7 @@ def call_next():
     
     if next_item:
         next_item.status = 'serving'
-        next_item.called_at = datetime.utcnow()
+        next_item.called_at = datetime.now()
         db.session.commit()
         return jsonify({'success': True, 'queue_item': next_item.to_dict()})
     
@@ -103,7 +103,7 @@ def mark_done(item_id):
     item = QueueItem.query.get(item_id)
     if item and item.service_id == session.get('service_id'):
         item.status = 'done'
-        item.completed_at = datetime.utcnow()
+        item.completed_at = datetime.now()
         db.session.commit()
         return jsonify({'success': True})
     return jsonify({'error': 'Item not found'}), 404

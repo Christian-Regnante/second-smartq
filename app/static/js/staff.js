@@ -33,7 +33,10 @@ async function loadQueue() {
                     ${item.status === 'serving' ? `
                         <button onclick="markDone(${item.id})" class="btn btn-primary">Done</button>
                     ` : ''}
-                    ${item.status === 'waiting' ? `
+                    ${!item.status === 'waiting' ? `
+                        <button onclick="skip(${item.id})" class="btn btn-danger">Skip</button>
+                    ` : ''}
+                    ${item.status === 'serving' ? `
                         <button onclick="skip(${item.id})" class="btn btn-danger">Skip</button>
                     ` : ''}
                 </td>
